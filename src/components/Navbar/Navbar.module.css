@@ -1,0 +1,41 @@
+aside {
+  grid-area: aside;
+  background-color: #0d0d0d;
+  box-shadow: 1px 0px 10px 0px #0d0d0d;
+  z-index: 1;
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  padding: 25px 0;
+  list-style: none;
+}
+  
+.nav li{
+  margin-bottom: 15px;
+}
+  
+.nav li a {
+  display: block;
+  max-width: 100%;
+  padding: 10px 25px;
+  font-size: 22px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.nav li a.active {
+  position: relative;
+}
+
+.nav li a.active::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: '';
+  display: inline-block;
+  width: 5px;
+  height: 100%;
+  background-color: #fff;
+}

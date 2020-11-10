@@ -1,0 +1,33 @@
+.posts {
+    display: flex;
+    align-items: center;
+}
+
+li {}
+
+figure {
+    display: flex;
+    align-items: flex-start;
+}
+
+figure figcaption {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.avatar {
+    max-width: 50px;
+    margin-right: 25px;
+    height: auto;
+}
+
+.like {
+    min-width: 50px;
+    min-height: 1px;
+    margin: 15px 0;
+    padding: 3px 10px;
+    line-height: 18px;
+    font-size: 14px;
+}

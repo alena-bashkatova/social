@@ -1,0 +1,30 @@
+.dialog_item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 10px 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: #0d0d0d;
+  opacity: .7;
+}
+
+.dialog_item::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  height: 1px;
+  width: 90%;
+  background-color: #ccc;
+  transform: translate(-50%);
+}
+
+.dialog_item.active {
+  opacity: 1;
+}
+
+.dialog_item img {
+  max-width: 30px;
+  margin-right: 10px;
+}

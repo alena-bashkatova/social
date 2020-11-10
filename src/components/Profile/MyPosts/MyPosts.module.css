@@ -1,0 +1,9 @@
+.posts_wrapper h3 {
+    margin: 40px;
+}
+
+.posts_wrapper .posts {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+}

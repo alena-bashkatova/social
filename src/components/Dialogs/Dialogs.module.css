@@ -1,0 +1,42 @@
+.massages_page {
+  display: flex;
+  height: 100%;
+}
+
+.dialogs {
+  min-width: 150px;
+  margin: 0;
+  padding: 15px;
+  background: #ececec;
+  list-style: none;
+  box-shadow: 0 0 10px 0 #0d0d0d;
+}
+
+.messages_wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  flex-grow: 1;
+}
+.messages {
+  display: flex;
+  flex-direction: column;
+  padding: 0 75px;
+  list-style: none;
+}
+
+.messages_wrapper form {
+  margin: 0;
+  padding: 75px;
+}
+
+.messages_wrapper form textarea {
+  width: 100%;
+  height: 50px;
+}
+
+.messages_wrapper form button {
+  margin: 15px 0;
+  font-size: 16px;
+  line-height: 20px;
+}
