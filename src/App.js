@@ -10,7 +10,6 @@ import Settings from './components/Settings/Settings';
 
 import {Route} from "react-router-dom";
 const App = (props) => {
-
   return (
     <div className="app-wrapper">
       <Header />
@@ -20,7 +19,7 @@ const App = (props) => {
               render={ () => <Profile 
               profilePage={props.state.profilePage} 
               dispatch={props.dispatch} />} />
-        <Route path="/messages" render={ () => <Dialogs state={props.state.messagesPage}/>} />
+        <Route path="/messages" render={ () => <Dialogs store={props.store}/>} />
         <Route path="/news" render={ () => <News />} />
         <Route path="/music" render={ () => <Music />} />
         <Route path="/settings" render={ () => <Settings />} />

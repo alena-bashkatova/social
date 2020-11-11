@@ -3,24 +3,32 @@ import { NavLink } from 'react-router-dom';
 import dialogsStyles from './Dialogs.module.css';
 import DialogItem from './DialogItem/DialogItem';
 import Message from './Message/Message';
+import {udateNewMessageTextActionCreator, addMessageActionCreator} from '../../redux/state';
 
 const Dialogs = (props) => {
+  let state = props.store.getState().messagesPage;
 
-  let dialogsElems = props.state.dialogs
+  let dialogsElems = state.dialogs
   .map( dialog => <DialogItem 
     name={dialog.name} 
     id={dialog.id}/> );
 
-  let messagesElems = props.state.messages
+  let messagesElems = state.messages
   .map( message => <Message 
     message={message.text}/>);
 
   let newMessageElem = React.createRef();
 
-    let addMessage = () => { 
-      let text = newMessageElem.current.value;
-      alert(text) 
-    };
+  let addMessage = () => { 
+    props.store.dispatch(addMessageActionCreator());
+  };
+
+  let newMessageText = state.newMessageText;
+
+  let onTextMessageChange = (e) => {
+    let text = e.target.value;
+    props.store.dispatch(udateNewMessageTextActionCreator(text));
+  }
 
   return (
     <div className={dialogsStyles.massages_page}>
@@ -31,10 +39,10 @@ const Dialogs = (props) => {
         <ul className={dialogsStyles.messages}>
           {messagesElems}
         </ul>
-        <form>
-          <textarea ref={ newMessageElem }></textarea>
+        <div className={dialogsStyles.form}>
+          <textarea ref={ newMessageElem } value={newMessageText} onChange={onTextMessageChange}></textarea>
           <button onClick={ addMessage }>Add message</button>
-        </form>
+        </div>
       </div>
     </div>
   );
