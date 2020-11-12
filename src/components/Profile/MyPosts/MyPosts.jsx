@@ -10,13 +10,13 @@ const MyPosts = (props) => {
 
   let newPostElem = React.createRef();
 
-  let addPost = () => {
-    props.dispatch(addPostActionCreator());
+  let onAddPost = () => {
+    props.addPost();
   };
 
   let onPostChange = () => {
     let text = newPostElem.current.value;
-    props.dispatch(udateNewPostTextActionCreator(text));
+    props.udateNewPostText(text);
   };
 
   return (
@@ -26,7 +26,7 @@ const MyPosts = (props) => {
                   ref={newPostElem} 
                   value={props.newPostText} 
                   />
-        <button onClick={ addPost }>Add post</button>
+        <button onClick={ onAddPost }>Add post</button>
 
         <ul className={myPostsStyles.posts}>
           {postsElems}

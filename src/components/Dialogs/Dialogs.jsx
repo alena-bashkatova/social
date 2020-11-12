@@ -6,7 +6,7 @@ import Message from './Message/Message';
 import {udateNewMessageTextActionCreator, addMessageActionCreator} from '../../redux/dialogs-reduser';
 
 const Dialogs = (props) => {
-  let state = props.store.getState().messagesPage;
+  let state = props.messagesPage;
 
   let dialogsElems = state.dialogs
   .map( dialog => <DialogItem 
@@ -20,14 +20,14 @@ const Dialogs = (props) => {
   let newMessageElem = React.createRef();
 
   let addMessage = () => { 
-    props.store.dispatch(addMessageActionCreator());
+    props.addMessage();
   };
 
   let newMessageText = state.newMessageText;
 
   let onTextMessageChange = (e) => {
     let text = e.target.value;
-    props.store.dispatch(udateNewMessageTextActionCreator(text));
+    props.udateNewMessageText(text);
   }
 
   return (
